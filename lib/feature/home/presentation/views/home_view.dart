@@ -1,0 +1,28 @@
+import 'package:bookly_app/generated/assets.dart';
+import 'package:flutter/material.dart';
+
+class BookLayoutScreen extends StatelessWidget {
+  const BookLayoutScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Padding(
+          padding: EdgeInsetsDirectional.only(start: 24),
+          child: Image(image: AssetImage(Assets.imagesLogo),height: 24),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsetsDirectional.only(end: 24),
+            child: IconButton(onPressed: (){}, icon: const Icon(Icons.search_rounded,size: 28)),
+          )
+        ],
+      ),
+      body: const Column(
+        children: [
+        ]
+      ),
+    );
+  }
+}
