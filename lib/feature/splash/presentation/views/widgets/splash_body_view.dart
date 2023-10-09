@@ -1,10 +1,10 @@
 
 import 'dart:async';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:bookly_app/feature/home/presentation/views/home_view.dart';
 import 'package:bookly_app/generated/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
+import '../../../../home/presentation/views/home_view.dart';
 
 class SplashBodyView extends StatefulWidget {
   const SplashBodyView({super.key});
@@ -45,7 +45,7 @@ class SplashBodyViewState extends State<SplashBodyView> {
     });
     Timer(const Duration(milliseconds: 2950), () {
       setState(() {
-        Get.off(() =>const BookLayoutScreen() ,transition: Transition.zoom);
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const BookLayoutView(),));
 
       });
     });
