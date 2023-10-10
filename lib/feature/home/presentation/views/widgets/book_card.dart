@@ -8,8 +8,7 @@ class BookCard extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 1.4/2,
       child: Container(
-        width: 160,
-        height: 250,
+
         decoration:   const BoxDecoration(
             borderRadius: BorderRadiusDirectional.all(Radius.circular(20)),
             image: DecorationImage(image: NetworkImage('https://wallpapers.com/images/hd/cool-profile-picture-87h46gcobjl5e4xu.jpg'),fit: BoxFit.cover)
