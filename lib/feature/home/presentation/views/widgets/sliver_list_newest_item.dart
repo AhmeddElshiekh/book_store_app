@@ -12,6 +12,7 @@ class SliverListNewestBookItem extends StatelessWidget {
             (context, index) =>
         const NewestBookItem(),
         childCount: 10,
+
       ),
     );
   }

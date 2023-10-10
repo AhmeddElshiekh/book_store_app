@@ -1,8 +1,8 @@
-import 'package:bookly_app/feature/home/presentation/views/widgets/body_book_detail.dart';
+import 'package:bookly_app/feature/search/presentation/views/widgets/search_view_body.dart';
 import 'package:flutter/material.dart';
 
-class BookDetailView extends StatelessWidget {
-  const BookDetailView({super.key});
+class SearchView extends StatelessWidget {
+  const SearchView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class BookDetailView extends StatelessWidget {
           icon: const Icon(Icons.cancel),
         ),
       ),
-      body: const BodyBookDetail(),
+      body: const SearchViewBody(),
     );
   }
 }
