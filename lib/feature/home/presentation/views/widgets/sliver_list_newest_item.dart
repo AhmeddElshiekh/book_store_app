@@ -1,4 +1,5 @@
 import 'package:bookly_app/feature/home/presentation/manager/newest_book_cubit/newest_book_cubit.dart';
+import 'package:bookly_app/feature/home/presentation/views/widgets/loading_newest_book.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'newest_boot_item.dart';
@@ -26,8 +27,12 @@ class SliverListNewestBookItem extends StatelessWidget {
         );
        }
        else{
-         return const SliverToBoxAdapter(
-           child: Center(child: CircularProgressIndicator()),
+         return SliverList(delegate: SliverChildBuilderDelegate(
+               (context, index) =>
+              const LoadingNewestBooks(),
+           childCount: 10,
+
+         ),
          );
        }
       },

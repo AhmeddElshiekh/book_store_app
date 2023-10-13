@@ -43,6 +43,9 @@ class NewestBookItem extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
+                      const SizedBox(
+                        height: 5,
+                      ),
                       Text(
                         model.volumeInfo?.authors?[0]??'',
                         maxLines: 2,
@@ -64,3 +67,71 @@ class NewestBookItem extends StatelessWidget {
     );
   }
 }
+
+
+// class Loading extends StatelessWidget {
+//   const Loading({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return
+//       Column(
+//         children: [
+//           Shimmer.fromColors(
+//             baseColor: Colors.grey[500]!,
+//             highlightColor: Colors.grey[100]!,
+//             child: Row(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Container(
+//                   decoration: const BoxDecoration(
+//                     borderRadius: BorderRadiusDirectional.all(Radius.circular(20)),
+//                     color: Colors.white,
+//
+//                   ),
+//                   height: 100,
+//                   width: 100,
+//                 ),
+//                 const SizedBox(
+//                   width: 10,
+//                 ),
+//                 Expanded(
+//                   child: Column(
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: <Widget>[
+//                       const SizedBox(
+//                         height: 10,
+//                       ),
+//                       Container(
+//                         decoration: const BoxDecoration(
+//                           borderRadius: BorderRadiusDirectional.all(Radius.circular(20)),
+//                           color: Colors.white,
+//
+//                         ),
+//                         width: double.infinity,
+//                         height: 18.0,
+//                       ),
+//                       const SizedBox(
+//                         height: 10,
+//                       ),
+//                       Container(
+//                         decoration: const BoxDecoration(
+//                           borderRadius: BorderRadiusDirectional.all(Radius.circular(20)),
+//                           color: Colors.white,
+//
+//                         ),
+//                         width: double.infinity,
+//                         height: 14.0,
+//                       ),
+//                     ],
+//                   ),
+//                 )
+//               ],
+//             ),
+//           )
+//
+//         ],
+//       );
+//
+//   }
+// }

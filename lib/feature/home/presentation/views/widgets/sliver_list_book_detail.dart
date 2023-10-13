@@ -1,5 +1,6 @@
 import 'package:bookly_app/feature/home/presentation/manager/list_book_details_cubit/list_book_details_cubit.dart';
 import 'package:bookly_app/feature/home/presentation/views/widgets/book_card.dart';
+import 'package:bookly_app/feature/home/presentation/views/widgets/loading_list_book_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,13 +23,14 @@ class ListViewBookDetails extends StatelessWidget {
                       child: BookCard(model:state.model[index] ),
                     ),
                 scrollDirection: Axis.horizontal,
-              ));
+              ),
+          );
 
         }
         else if(state is ListBookDetailsErrorState){
           return Text(state.errMessage);
         }else{
-          return CircularProgressIndicator();
+          return const LoadingListBookDetails();
         }
       },
     );

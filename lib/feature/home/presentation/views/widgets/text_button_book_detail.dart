@@ -12,9 +12,10 @@ class TextButtonBookDetail extends StatelessWidget {
         Expanded(
           child: CustomTextButton(
             text: 'Free',
-            backGroundColor: Colors.white,
+            backGroundColor:Colors.grey,
             style: Styles.textStyle20
-                .copyWith(color: Colors.black, fontFamily: 'GT Sectra Fine'),
+                .copyWith(
+                color: Colors.white, fontFamily: 'GT Sectra Fine'),
             border: const BorderRadiusDirectional.only(
                 bottomStart: Radius.circular(12),
                 topStart: Radius.circular(12)),
@@ -26,7 +27,8 @@ class TextButtonBookDetail extends StatelessWidget {
             backGroundColor: const Color(0xffEF8262),
             style: Styles.textStyle20.copyWith(color: Colors.white),
             border: const BorderRadiusDirectional.only(
-                topEnd: Radius.circular(12), bottomEnd: Radius.circular(12)),
+                topEnd: Radius.circular(12),
+                bottomEnd: Radius.circular(12)),
           ),
         ),
       ],

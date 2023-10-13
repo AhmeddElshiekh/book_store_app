@@ -3,6 +3,7 @@ import 'package:bookly_app/feature/home/data/repos/home_repo_implementation.dart
 import 'package:bookly_app/feature/home/presentation/manager/horizontal_list_book_cubit/horizontal_list_book_cubit.dart';
 import 'package:bookly_app/feature/home/presentation/views/book_detail_view.dart';
 import 'package:bookly_app/feature/home/presentation/views/widgets/book_card.dart';
+import 'package:bookly_app/feature/home/presentation/views/widgets/loading_horizontal_list.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -41,7 +42,7 @@ class ListViewHorizontalBookCard extends StatelessWidget {
           else if(state is HorizontalListBookErrorState){
            return  Text(state.errMassage);
           }else{
-            return const Center(child: CircularProgressIndicator());
+            return const LoadingHorizontalList();
           }
 
         },
@@ -49,3 +50,7 @@ class ListViewHorizontalBookCard extends StatelessWidget {
     );
   }
 }
+
+
+
+
