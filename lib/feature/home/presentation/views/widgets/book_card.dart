@@ -1,26 +1,30 @@
-
-import 'package:bookly_app/feature/home/presentation/views/book_detail_view.dart';
+import 'package:bookly_app/feature/home/data/models/book_model.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class BookCard extends StatelessWidget {
-  const BookCard({super.key,});
+  const BookCard({
+    super.key,
+    required this.model,
+  });
+
+  final BookModel model;
+
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 1.4/2,
-      child: GestureDetector(
-        onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const BookDetailView(),));
-
-        },
-        child: Container(
-          decoration:   const BoxDecoration(
-              borderRadius: BorderRadiusDirectional.all(Radius.circular(20)),
-              image: DecorationImage(image: NetworkImage('https://wallpapers.com/images/hd/cool-profile-picture-87h46gcobjl5e4xu.jpg'),fit: BoxFit.cover)
-          ),
+      aspectRatio: 1.4 / 2,
+      child:
+      ClipRRect(
+        borderRadius: const BorderRadiusDirectional.all(Radius.circular(20)),
+        child: CachedNetworkImage(
+          fit: BoxFit.cover,
+          imageUrl: '${model.volumeInfo!.imageLinks?.thumbnail}' ?? '',
+          placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+          errorWidget: (context, url, error) => const Center(child: Icon(Icons.error)),
         ),
       ),
-    );
 
+    );
   }
 }
