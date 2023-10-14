@@ -21,7 +21,7 @@ final BookModel model;
             const SizedBox(
               height: 35,
             ),
-            const TextButtonBookDetail(),
+            TextButtonBookDetail(model: model),
             const SizedBox(
               height: 35,
             ),

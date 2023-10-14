@@ -44,6 +44,16 @@ dependencies:
   shimmer: ^3.0.0
   connectivity_plus: ^5.0.0
   shared_preferences: ^2.2.2
+  url_launcher: ^6.1.14
+  get_it: ^7.6.4
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/book.jpg"
+#  adaptive_icon_background: "#ffffff"
+#  adaptive_icon_foreground: "assets/logo_foreground.png"
 
 dev_dependencies:
   flutter_test:

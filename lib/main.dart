@@ -1,12 +1,11 @@
 import 'package:bookly_app/core/bloc_observer/bloc_observer.dart';
 import 'package:bookly_app/core/change_theme_cubit/change_them_cubit.dart';
-import 'package:bookly_app/core/utils/api_service.dart';
 import 'package:bookly_app/core/utils/cache_helper.dart';
+import 'package:bookly_app/core/utils/service_locator.dart';
 import 'package:bookly_app/feature/home/data/repos/home_repo_implementation.dart';
 import 'package:bookly_app/feature/home/presentation/manager/check_internet_cubit/check_internet_cubit.dart';
 import 'package:bookly_app/feature/home/presentation/manager/newest_book_cubit/newest_book_cubit.dart';
 import 'package:bookly_app/feature/splash/presentation/views/splash_view.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,6 +13,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
   await CacheHelper.init();
+  serviceLocator();
   dynamic isLight = CacheHelper.getSaveData(key: 'mode');
   runApp(
     MyApp(
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) =>
-              NewestBookCubit(HomeRepoImp(ApiService(Dio())))..getNewestBooks(),
+              NewestBookCubit(getIt.get<HomeRepoImp>())..getNewestBooks(),
         ),
         BlocProvider(
           create: (context) => CheckInternetCubit()..checkConnection(),
