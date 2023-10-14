@@ -25,6 +25,23 @@ class BookDetailSection extends StatelessWidget {
           style:
           Styles.textStyle20.copyWith(fontFamily: 'GT Sectra Fine'),
         ),
+        const SizedBox(
+          height: 10,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+
+            const Icon(Icons.star,color: Colors.yellow,),
+            const SizedBox(width: 5,),
+
+            Text('${model.volumeInfo?.averageRating ?? '0'}',style: Styles.textStyle18,),
+            Text('(${model.volumeInfo?.ratingsCount ?? '0'})',style: const TextStyle(
+              color: Colors.grey,
+            ), )
+
+          ],
+        ),
       ],
     );
   }

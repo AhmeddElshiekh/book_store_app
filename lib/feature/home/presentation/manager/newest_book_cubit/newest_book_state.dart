@@ -11,8 +11,9 @@ class NewestBookSuccessState extends NewestBookState {
 }
 class NewestBookErrorState extends NewestBookState {
   final String errMassage;
+  final IconData errIcon;
 
-  NewestBookErrorState(this.errMassage);
+  NewestBookErrorState(this.errMassage, this.errIcon);
 
 }
 class NewestBookLoadingState extends NewestBookState {}

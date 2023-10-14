@@ -11,6 +11,7 @@ class CustomTextFiled extends StatelessWidget {
           border: OutlineInputBorder(
           ),
           labelText: 'Search',
+          hintText: 'Book Name',
           prefixIcon: Icon(Icons.search_rounded,),
       ),
     );

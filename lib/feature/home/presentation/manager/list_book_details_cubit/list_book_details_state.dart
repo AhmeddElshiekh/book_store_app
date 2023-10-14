@@ -10,7 +10,8 @@ class ListBookDetailsSuccessState extends ListBookDetailsState {
 }
 class ListBookDetailsErrorState extends ListBookDetailsState {
   final String errMessage;
+  final IconData errIcon;
 
-  ListBookDetailsErrorState(this.errMessage);
+  ListBookDetailsErrorState(this.errMessage, this.errIcon);
 }
 class ListBookDetailsLoadingState extends ListBookDetailsState {}

@@ -35,7 +35,7 @@ final BookModel model;
                 height: 20,
               ),
             ),
-            const ListViewBookDetails()
+             ListViewBookDetails(model: model,)
           ],
         ),
       ),

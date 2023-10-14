@@ -11,40 +11,37 @@ class BookLayoutView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CheckInternetCubit()..checkConnection(),
-      child: BlocConsumer<CheckInternetCubit, CheckInternetState>(
-        listener: (context, state) {
-          if (state is ConnectedState) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                backgroundColor: Colors.green,
-                content: Text(state.message),
-              ),
-            );
-          }
-          if (state is NotConnectedState) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                backgroundColor: Colors.red,
-                content: Text(state.message),
-              ),
-            );
-          }
-        },
-        builder: (context, state) {
-          return Scaffold(
-            appBar: AppBar(
-              title: const TitleWidget(),
-              actions: const [
-                SearchIcon(),
-                ThemeIcon(),
-              ],
+    return BlocConsumer<CheckInternetCubit, CheckInternetState>(
+      listener: (context, state) {
+        if (state is ConnectedState) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              backgroundColor: Colors.green,
+              content: Text(state.message),
             ),
-            body: const HomeViewBody(),
           );
-        },
-      ),
+        }
+        if (state is NotConnectedState) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              backgroundColor: Colors.red,
+              content: Text(state.message),
+            ),
+          );
+        }
+      },
+      builder: (context, state) {
+        return Scaffold(
+          appBar: AppBar(
+            title: const TitleWidget(),
+            actions: const [
+              SearchIcon(),
+              ThemeIcon(),
+            ],
+          ),
+          body: const HomeViewBody(),
+        );
+      },
     );
   }
 }

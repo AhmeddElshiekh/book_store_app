@@ -12,8 +12,9 @@ class HorizontalListBookSuccessState extends HorizontalListBookStates {
 }
 class HorizontalListBookErrorState extends HorizontalListBookStates {
   final String errMassage;
+  final IconData errIcon;
 
-  HorizontalListBookErrorState(this.errMassage);
+  HorizontalListBookErrorState(this.errMassage, this.errIcon);
 
 }
 class HorizontalListBookLoadingState extends HorizontalListBookStates {}

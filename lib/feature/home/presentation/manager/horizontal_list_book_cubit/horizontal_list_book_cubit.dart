@@ -1,5 +1,6 @@
 import 'package:bookly_app/feature/home/data/models/book_model.dart';
 import 'package:bookly_app/feature/home/data/repos/home_repo.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 part 'horizontal_list_book_state.dart';
 
@@ -12,7 +13,7 @@ class HorizontalListBookCubit extends Cubit<HorizontalListBookStates> {
     var result =await homeRepo.fetchListHorizontalBooks();
      result.fold((failure) {
        print(failure.errMessage.toString());
-       emit(HorizontalListBookErrorState(failure.errMessage));
+       emit(HorizontalListBookErrorState(failure.errMessage,failure.errIcon));
 
      }, (book) {
 

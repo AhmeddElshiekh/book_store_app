@@ -44,7 +44,7 @@ class SplashBodyViewState extends State<SplashBodyView> {
         _d = true;
       });
     });
-    Timer(const Duration(milliseconds: 2950), () {
+    Timer(const Duration(milliseconds: 3800), () {
       setState(() {
         Navigator.pushReplacement(
             context,
