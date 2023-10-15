@@ -1,4 +1,4 @@
-import 'package:bookly_app/feature/home/data/models/book_model.dart';
+import 'package:bookly_app/core/models/book_model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +19,7 @@ class BookCard extends StatelessWidget {
         borderRadius: const BorderRadiusDirectional.all(Radius.circular(20)),
         child: CachedNetworkImage(
           fit: BoxFit.cover,
-          imageUrl: '${model.volumeInfo!.imageLinks?.thumbnail}' ?? '',
+          imageUrl: model.volumeInfo!.imageLinks?.thumbnail ?? '' ,
           placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
           errorWidget: (context, url, error) => const Center(child: Icon(Icons.error)),
         ),
